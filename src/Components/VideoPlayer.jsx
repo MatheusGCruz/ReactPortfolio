@@ -12,7 +12,7 @@ const VideoPlayer = ({videoId}) =>{
 
     return (
         <video ref={videoRef} width='800' height='400' controls autoPlay>
-            <source src={'http://localhost:3005/videos/'+videoId} type='video/mp4'></source>
+            <source src={'http://antares.ninja:3005/videos/'+videoId} type='video/mp4'></source>
             Error when playing
         </video>
     )
