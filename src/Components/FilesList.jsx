@@ -19,7 +19,7 @@ const FilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "http://localhost:3005/files");
+            "http://antares.ninja:3005/files");
             setFiles(response.data)    
       }
 
