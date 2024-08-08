@@ -5,7 +5,7 @@ import React, {useRef, useEffect, useState} from 'react'
 const Dracula = () =>{
 
     return (
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', margin:'20px'}}>
         <div><h1>Drácula</h1>  
 
         </div>

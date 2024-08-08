@@ -5,8 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./Images/rust.jpg');
+  background-image: url('./Images/86.jpg');
   background-size: cover;  
+  height: 100%;
+  overflow: hidden;
 }
 
 code {
@@ -17,20 +19,27 @@ code {
 header {
   height: 5vh;
   background-color: red;
-  background-image: url('./Images/Steel.jfif');
+  background-image: url('./Images/rust.jpg');
   background-size: cover;  
-  opacity: 30%;
+  opacity: 70%;
 }
 
 footer {
   height: 5vh;
   background-color: red;
-  background-image: url('./Images/Steel.jfif');
+  background-image: url('./Images/rust.jpg');
   background-size: cover;  
-  opacity: 15%;
+  opacity: 70%;
 }
 
-spacer{
-  background-color: aqua;
-  padding: 10vh;
+main{
+  height: 90vh;
 }
+
+aside{
+  height: 90vh;
+  background-image: url('./Images/rust.jpg');
+  background-size: cover;  
+  opacity: 70%;
+}
+

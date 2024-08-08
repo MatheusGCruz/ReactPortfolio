@@ -2,8 +2,7 @@
   display: flex;
     align-items: flex-end;
     justify-content: center;
-  background-image: url('./Images/86.jpg');
-  background-size: cover; 
+
 }
 
 .App-logo {
@@ -84,6 +83,18 @@ border-left: 100;
   justify-content: center;
 }
 
+.draculaCover{
+  background-image: url('./Images/Dracula.jpg');
+  background-size: 100% 100%;
+  border-left: 100;
+    border-left-color: black;
+    border-left-width:20;
+    border-radius: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
 .flipPage{
   background-image: url('./Images/rightPage.jpg');
   background-size: 100% 100%;
@@ -91,3 +102,14 @@ border-left: 100;
   border-radius: 5%;
   border-color: black;
 }
+
+.innerPage{
+  padding:'30px';
+  display: 'flex';
+  justify-content:'center';
+  align-items:'center';
+  margin:20;
+  font-size:20;
+  text-align:'justify';
+}
+

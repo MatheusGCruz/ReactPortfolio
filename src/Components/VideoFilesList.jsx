@@ -1,16 +1,14 @@
 import React, {useRef, useEffect, useState} from 'react'
 import searchHttp from '../Functions/HttpSearch';
 import FetchUsers from '../Functions/HttpSearch';
-import VideoPlayer from '../Components/VideoPlayer';
+import VideoPlayer from './VideoPlayer';
 
 import axios from "axios";
 
 
-const FilesList = () =>{
+const VideoFilesList = () =>{
     const [files, setFiles] = useState([]);
     const [videoId, setVideoId] = useState(null);
-
-      const {users, hasError} = FetchUsers();
 
       function playVideo(e, videoId){
         e.preventDefault();
@@ -19,7 +17,7 @@ const FilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "http://antares.ninja:3005/files");
+            "http://antares.ninja:3005/videoFiles");
             setFiles(response.data)    
       }
 
@@ -42,5 +40,5 @@ const FilesList = () =>{
       )
 }
 
-export default FilesList;
+export default VideoFilesList;
 

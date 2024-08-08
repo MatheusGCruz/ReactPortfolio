@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 
 const FetchUsers = () => {
   const [hasError, setErrors] = useState(false);
-  const [users, setUsers] = useState({});
+  const [videos, setVideos] = useState({});
 
   async function fetchData() {
     const res = await fetch(
-      "http://antares.ninja:3005/files"
+      "http://antares.ninja:3005/videoFiles"
     );
     res
       .json()
-      .then(res => setUsers(res))
+      .then(res => setVideos(res))
       .catch(err => setErrors(err));
   }
 
@@ -18,7 +18,7 @@ const FetchUsers = () => {
     fetchData();
   }, []);
 
-  return JSON.stringify(users);
+  return JSON.stringify(videos);
 };
 
 export default FetchUsers;

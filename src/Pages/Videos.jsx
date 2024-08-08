@@ -2,7 +2,7 @@ import { useState  } from 'react';
 import VideoPlayer from '../Components/VideoPlayer';
 import MkvVideoPlayer from '../Components/MkvVideoPlayer';
 import Input from "../Components/Input";
-import FilesList from "../Components/FilesList";
+import VideoFilesList from "../Components/VideoFilesList";
 import './../Styles/Videos.css';
 
 function Videos() {
@@ -28,7 +28,7 @@ function Videos() {
         </div>
         <div class="col">
             <br />
-            <FilesList />        
+            <VideoFilesList />        
           </div>
       </div>
 )
