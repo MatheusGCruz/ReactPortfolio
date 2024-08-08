@@ -16,11 +16,17 @@ import DraculaP6 from './Pages/Dracula/DraculaP6';
 import DraculaP7 from './Pages/Dracula/DraculaP7';
 import DraculaP8 from './Pages/Dracula/DraculaP8';
 import DraculaP9 from './Pages/Dracula/DraculaP9';
+import {returnPages} from './Files/DraculaPages';
 
 function App() {
   const pages = ['page 5', 'page 6', 'page 7', 'page 8']
   const widthValue = 1000;
   const heightValue = 1000;
+
+  const draculaPages = returnPages();
+  let pageIndex = 0;
+
+
 
   return (
     <div className="App">
@@ -36,19 +42,18 @@ function App() {
         <div className="leftPage"> <Music /></div>
 	      <div className="rightPage"><Videos /></div>
 	      <div className="leftPage">  </div>
-	      <div className="rightPage"> <Dracula/> </div>
-        <div className="leftPage"> <DraculaP1/> </div>
-	      <div className="rightPage"> <DraculaP2/> </div>
-        <div className="leftPage"> <DraculaP3/> </div>
-	      <div className="rightPage"> <DraculaP4/> </div>
-        <div className="leftPage"> <DraculaP5/> </div>
-	      <div className="rightPage"> <DraculaP6/> </div>
-        <div className="leftPage"> <DraculaP7/> </div>
-	      <div className="rightPage"> <DraculaP8/> </div>
-        <div className="leftPage"> <DraculaP9/> </div>
-	      <div className="rightPage"> </div>
+	      <div className="draculaCover"> </div>
 
-        { pages.map( (page) => <div className="flipPage"> {page} </div>) }
+        { draculaPages.map( (page) => {
+          pageIndex = pageIndex + 1;
+          if(pageIndex%2==0){
+            return <div className="rightPage"> <div style={{fontSize:25, margin:20, textAlign:'justify', padding:'50px 80px'}}>{page}</div></div>
+          }
+          else{
+            return <div className="leftPage"> <div style={{fontSize:25, margin:20, textAlign:'justify', padding:'50px 80px'}}>{page}</div> </div>
+          }        
+          
+          }) }
 	      <div className="backCover"> BackCover </div>
 	      <div > side End </div>
 

@@ -31,11 +31,10 @@ const MusicFilesList = () =>{
       <div>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
         <MusicPlayer musicId={musicId}></MusicPlayer>
-        </div>
-       
+        </div>      
           
         <div style={{padding:'50px', border:'20px'}}>
-            <div style={{height:'50vh', overflowY:'scroll', padding:'10px'}}>
+            <div class="listContainer" style={{height:'50vh',overflowY: 'scroll',padding:'10px'}}>
                 { files.map( (file) => <div><button style={{width:'100%'}} key={file} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
             </div>
         </div>
