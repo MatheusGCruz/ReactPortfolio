@@ -6,7 +6,7 @@ const FetchUsers = () => {
 
   async function fetchData() {
     const res = await fetch(
-      "http://localhost:3005/files"
+      "http://antares.ninja:3005/files"
     );
     res
       .json()
@@ -22,15 +22,3 @@ const FetchUsers = () => {
 };
 
 export default FetchUsers;
-
-
-  /*export default function searchHttp() {
-    fetch('http://localhost:3005/files').then(function(response) {
-        console.log("response");
-       return response.json();
-  }).then(function(data) {
-    console.log(data + " - data");
-  }).catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-}*/
