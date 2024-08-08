@@ -5,6 +5,7 @@ import './App.css';
 
 import HTMLFlipBook  from "react-pageflip";
 import Videos from "./Pages/Videos"
+import Music from "./Pages/Music"
 import Dracula from './Pages/Dracula/Dracula';
 import DraculaP1 from './Pages/Dracula/DraculaP1';
 import DraculaP2 from './Pages/Dracula/DraculaP2';
@@ -18,19 +19,21 @@ import DraculaP9 from './Pages/Dracula/DraculaP9';
 
 function App() {
   const pages = ['page 5', 'page 6', 'page 7', 'page 8']
-  const widthValue = 900;
+  const widthValue = 1000;
   const heightValue = 1000;
 
   return (
     <div className="App">
       <HTMLFlipBook         
           width={widthValue}
-          height={heightValue}>
+          height={heightValue}
+          clickEventForward='false'
+          isUserTouch='false'>
         <div > Side-Cover</div> 
         <div className="frontCover"> 
           <image src="./Images/Celestial.png"></image>
         </div> 
-        <div className="leftPage"> <Videos /></div>
+        <div className="leftPage"> <Music /></div>
 	      <div className="rightPage"><Videos /></div>
 	      <div className="leftPage">  </div>
 	      <div className="rightPage"> <Dracula/> </div>

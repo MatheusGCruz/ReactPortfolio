@@ -2,8 +2,7 @@
   display: flex;
     align-items: flex-end;
     justify-content: center;
-  background-image: url('./Images/86.jpg');
-  background-size: cover; 
+
 }
 
 .App-logo {
