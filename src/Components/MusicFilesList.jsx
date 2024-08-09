@@ -1,6 +1,7 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import MusicPlayer from './MusicPlayer';
 import './../Styles/General.css'
+import useScreenSize from './../Functions/ScreenSize';
 
 import axios from "axios";
 
@@ -8,12 +9,11 @@ import axios from "axios";
 const MusicFilesList = () =>{
     const [files, setFiles] = useState([]);
     const [musicId, setMusicId] = useState(null);
-    const [testText, setTestText] = useState(null);
+    const screenSize = useScreenSize();
 
       function playMusic(e, musicId){
         e.preventDefault();
         setMusicId(musicId);
-        setTestText(musicId);
       }
 
       const getFiles = async() => {
@@ -35,7 +35,7 @@ const MusicFilesList = () =>{
           
         <div style={{padding:'50px', border:'20px'}}>
             <div class="listContainer" style={{height:'50vh',overflowY: 'scroll',padding:'10px'}}>
-                { files.map( (file) => <div><button style={{width:'100%'}} key={file} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
+                { files.map( (file) => <div><button style={{width:'100%', fontSize:.8*screenSize.font}} key={file} onClick={(e) =>{playMusic(e, file)}}>{file}</button></div>) }
             </div>
         </div>
       </div>
