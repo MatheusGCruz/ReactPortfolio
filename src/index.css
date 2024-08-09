@@ -17,27 +17,28 @@ code {
 }
 
 header {
-  height: 5vh;
+  height: 10%;
   background-color: red;
   background-image: url('./Images/rust.jpg');
   background-size: cover;  
-  opacity: 70%;
+  opacity: 60%;
 }
 
 footer {
-  height: 5vh;
+  height: 10%;
   background-color: red;
   background-image: url('./Images/rust.jpg');
   background-size: cover;  
-  opacity: 70%;
+  opacity: 60%;
+  bottom:0;
 }
 
 main{
-  height: 90vh;
+  height: 80%;
 }
 
 aside{
-  height: 90vh;
+  height: 90%;
   background-image: url('./Images/rust.jpg');
   background-size: cover;  
   opacity: 70%;

@@ -1,14 +1,15 @@
-import React, {useRef, useEffect, useState} from 'react'
-import searchHttp from '../Functions/HttpSearch';
-import FetchUsers from '../Functions/HttpSearch';
+import React, {useEffect, useState} from 'react'
 import VideoPlayer from './VideoPlayer';
 
 import axios from "axios";
+import useScreenSize from './../Functions/ScreenSize';
+
 
 
 const VideoFilesList = () =>{
     const [files, setFiles] = useState([]);
     const [videoId, setVideoId] = useState(null);
+    const screenSize = useScreenSize();
 
       function playVideo(e, videoId){
         e.preventDefault();
@@ -29,12 +30,14 @@ const VideoFilesList = () =>{
     return (
       <div>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-        <VideoPlayer videoId={videoId}></VideoPlayer>
+          <VideoPlayer videoId={videoId}></VideoPlayer>
         </div>
         
           
-        <div style={{padding:'50px', border:'20px'}}>
-          { files.map( (file) => <div><button style={{width:'100%'}} key={file} onClick={(e) =>{playVideo(e, file)}}>{file}</button></div>) }
+        <div style={{padding:.5*screenSize.verticalPadding, border:'20px'}}>
+          <div class="listContainer" style={{height:.3*screenSize.height ,overflowY: 'scroll',padding:'10px'}}>
+            { files.map( (file) => <div><button style={{width:'100%', fontSize:.8*screenSize.font}} key={file} onClick={(e) =>{playVideo(e, file)}}>{file}</button></div>) }
+          </div>
         </div>
       </div>
       )
