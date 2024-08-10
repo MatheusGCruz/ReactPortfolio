@@ -1,0 +1,3 @@
+(BR) este é um teste TXT
+(NP) teste de nova pagina
+(NP)

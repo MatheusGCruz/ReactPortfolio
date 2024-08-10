@@ -6,12 +6,13 @@ const useScreenSize = () => {
     height: .95*window.innerHeight,
     font: .02*window.innerHeight,
     verticalPadding: .02*window.innerHeight,
-    horizontalPadding: window.innerWidth>2000?.05*window.innerHeight:.02*window.innerHeight
+    horizontalPadding: window.innerWidth>2000?.05*window.innerHeight:.02*window.innerHeight,
+    charDensity:window.innerWidth>2000?0.5*window.innerWidth:2.5*window.innerWidth
   });
 
   useEffect(() => {
     const handleResize = () => {
-
+        
     };
 
     window.addEventListener('resize', handleResize);
