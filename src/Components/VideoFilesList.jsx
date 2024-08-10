@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import VideoPlayer from './VideoPlayer';
+import MkvVideoPlayer from './MkvVideoPlayer';
 
 import axios from "axios";
 import useScreenSize from './../Functions/ScreenSize';
@@ -30,7 +31,7 @@ const VideoFilesList = () =>{
     return (
       <div>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-          <VideoPlayer videoId={videoId}></VideoPlayer>
+          <MkvVideoPlayer videoId={videoId}></MkvVideoPlayer>
         </div>
         
           

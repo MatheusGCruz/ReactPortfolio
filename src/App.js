@@ -41,6 +41,7 @@ function App() {
           <div>screenSize.font = {screenSize.font}</div>
           <div>screenSize.verticalPadding = {screenSize.verticalPadding}</div>
           <div>screenSize.horizontalPadding = {screenSize.horizontalPadding}</div>
+          <div>screenSize.charDensity = {screenSize.charDensity}</div>
         </div>
 	      <div className="draculaCover"> </div>
 
@@ -65,7 +66,6 @@ function App() {
 	      <div className="backCover"> BackCover </div>
 
       </HTMLFlipBook>
-
     </div>    
   );
 }
