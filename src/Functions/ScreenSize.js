@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth>2000?0.4*window.innerWidth:window.innerWidth,
+    width: window.innerWidth>window.innerHeight?0.4*window.innerWidth:window.innerWidth,
     height: .95*window.innerHeight,
     font: .02*window.innerHeight,
     verticalPadding: .02*window.innerHeight,
-    horizontalPadding: window.innerWidth>2000?.05*window.innerHeight:.02*window.innerHeight,
-    charDensity:window.innerWidth>2000?0.5*window.innerWidth:2.5*window.innerWidth
+    horizontalPadding: window.innerWidth>window.innerHeight?.05*window.innerHeight:.02*window.innerHeight,
+    charDensity:window.innerWidth>window.innerHeight?0.5*window.innerWidth:2.5*window.innerWidth
   });
 
   useEffect(() => {
