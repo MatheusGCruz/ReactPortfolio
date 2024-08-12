@@ -6,7 +6,7 @@ const FetchUsers = () => {
 
   async function fetchData() {
     const res = await fetch(
-      "http://antares.ninja:3005/videoFiles"
+      "https://antares.ninja/videoFiles"
     );
     res
       .json()
