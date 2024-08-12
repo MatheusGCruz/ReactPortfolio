@@ -9,7 +9,7 @@ const MusicPlayer = ({musicId}) =>{
     })
 
     return (
-        <audio src={'http://antares.ninja:3005/music/'+musicId} controls autoPlay>
+        <audio src={'https://antares.ninja/music/'+musicId} controls autoPlay>
             Error when playing
         </audio>
     )
