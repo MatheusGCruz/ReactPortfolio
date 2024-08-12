@@ -18,7 +18,7 @@ const MusicFilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "http://antares.ninja:3005/musicFiles");
+            "https://antares.ninja/musicFiles");
             setFiles(response.data)    
       }
 

@@ -15,7 +15,7 @@ const MkvVideoPlayer = ({videoId}) =>{
 
     return (
         <video ref={videoRef} width={0.9*screenSize.width} height={0.4*screenSize.height} controls autoPlay>
-            <source src={'http://antares.ninja:3005/mkv-videos/'+videoId} type='video/mp4'></source>
+            <source src={'https://antares.ninja/mkv-videos/'+videoId} type='video/mp4'></source>
             Error when playing
         </video>
     )

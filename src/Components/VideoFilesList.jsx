@@ -19,7 +19,7 @@ const VideoFilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "http://antares.ninja:3005/videoFiles");
+            "https://antares.ninja/videoFiles");
             setFiles(response.data)    
       }
 
