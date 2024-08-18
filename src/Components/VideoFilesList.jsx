@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import VideoPlayer from './VideoPlayer';
-import MkvVideoPlayer from './MkvVideoPlayer';
 
 import axios from "axios";
 import useScreenSize from './../Functions/ScreenSize';
+import useConfigs from '../Functions/Config';
 
 
 
 const VideoFilesList = () =>{
     const [files, setFiles] = useState([]);
     const [videoId, setVideoId] = useState(null);
+
     const screenSize = useScreenSize();
+    const configs = useConfigs();
 
       function playVideo(e, videoId){
         e.preventDefault();
@@ -19,7 +21,7 @@ const VideoFilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "https://antares.ninja/videoFiles");
+            configs.videoFiles);
             setFiles(response.data)    
       }
 
@@ -31,7 +33,7 @@ const VideoFilesList = () =>{
     return (
       <div>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-          <MkvVideoPlayer videoId={videoId}></MkvVideoPlayer>
+          <VideoPlayer videoId={videoId}></VideoPlayer>
         </div>
         
           

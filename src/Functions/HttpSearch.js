@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import useConfigs from "./Config";
 
 const FetchUsers = () => {
   const [hasError, setErrors] = useState(false);
   const [videos, setVideos] = useState({});
+  const configs = useConfigs();
 
   async function fetchData() {
     const res = await fetch(
-      "https://antares.ninja/videoFiles"
+      configs.videoFiles
     );
     res
       .json()

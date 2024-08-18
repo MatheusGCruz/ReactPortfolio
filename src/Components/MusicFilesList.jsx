@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import MusicPlayer from './MusicPlayer';
 import './../Styles/General.css'
 import useScreenSize from './../Functions/ScreenSize';
+import useConfigs from '../Functions/Config';
+
 
 import axios from "axios";
 
@@ -10,6 +12,7 @@ const MusicFilesList = () =>{
     const [files, setFiles] = useState([]);
     const [musicId, setMusicId] = useState(null);
     const screenSize = useScreenSize();
+    const configs = useConfigs();
 
       function playMusic(e, musicId){
         e.preventDefault();
@@ -18,7 +21,7 @@ const MusicFilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-            "https://antares.ninja/musicFiles");
+          configs.musicFiles);
             setFiles(response.data)    
       }
 
