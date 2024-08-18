@@ -1,10 +1,14 @@
 import React, {useRef, useEffect} from 'react'
 import useScreenSize from './../Functions/ScreenSize';
+import useConfigs from '../Functions/Config';
+
 
 
 const MkvVideoPlayer = ({videoId}) =>{
     const videoRef = useRef(null)
     const screenSize = useScreenSize();
+    const configs = useConfigs();
+
     useEffect(()=>{
         if(videoRef.current){
             videoRef.current.pause()
@@ -15,7 +19,7 @@ const MkvVideoPlayer = ({videoId}) =>{
 
     return (
         <video ref={videoRef} width={0.9*screenSize.width} height={0.4*screenSize.height} controls autoPlay>
-            <source src={'https://antares.ninja/mkv-videos/'+videoId} type='video/mp4'></source>
+            <source src={configs.mkvVideos+videoId} type='video/mp4'></source>
             Error when playing
         </video>
     )

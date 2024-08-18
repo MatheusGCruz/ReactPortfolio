@@ -1,20 +1,26 @@
 import './App.css';
-
-
+import React, {useEffect, fetchData} from 'react'
 
 import HTMLFlipBook  from "react-pageflip";
 import Videos from "./Pages/Videos"
 import Music from "./Pages/Music"
-import {returnPages} from './Files/DraculaPages';
+import BookList from "./Components/BookList"
+import {returnPages} from './Files/BookPages';
 import useScreenSize from './Functions/ScreenSize';
+import { bookSelect } from './Functions/BookSelect.js'
+
+export const UserContext = React.createContext(null);
+
 
 function App() {
   const widthValue = 1000;
   const heightValue = 800;
 
-  const draculaPages = returnPages();
+  const bookPages = returnPages("Dracula");
   const screenSize = useScreenSize();
+
   let pageIndex = 0;
+
 
 
 
@@ -43,9 +49,13 @@ function App() {
           <div>screenSize.horizontalPadding = {screenSize.horizontalPadding}</div>
           <div>screenSize.charDensity = {screenSize.charDensity}</div>
         </div>
+
+	      <div className="rightPage"></div>
+        <div className="leftPage"> <BookList /></div>
+        
 	      <div className="draculaCover"> </div>
 
-        { draculaPages.map( (page) => {
+        { bookPages.map( (page) => {
           pageIndex = pageIndex + 1;
           if(pageIndex%2===0){
             return <div className="rightPage"> <div style={{fontSize:screenSize.font, margin:screenSize.verticalPadding, textAlign:'justify', 

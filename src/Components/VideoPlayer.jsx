@@ -1,10 +1,12 @@
 import React, {useRef, useEffect} from 'react'
 import useScreenSize from './../Functions/ScreenSize';
+import useConfigs from '../Functions/Config';
 
 
 const VideoPlayer = ({videoId}) =>{
     const videoRef = useRef(null)
     const screenSize = useScreenSize();
+    const configs = useConfigs();
 
     useEffect(()=>{
         if(videoRef.current){
@@ -16,7 +18,7 @@ const VideoPlayer = ({videoId}) =>{
 
     return (
         <video ref={videoRef} width={0.9*screenSize.width} height={0.4*screenSize.height} controls autoPlay>
-            <source src={'https://antares.ninja/videos/'+videoId} type='video/mp4'></source>
+            <source src={configs.videos+videoId} type='video/mp4'></source>
             Error when playing
         </video>
     )

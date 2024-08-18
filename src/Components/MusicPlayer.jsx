@@ -1,7 +1,10 @@
 import React, {useRef, useEffect} from 'react'
+import useConfigs from '../Functions/Config';
+
 
 const MusicPlayer = ({musicId}) =>{
     const musicRef = useRef(null)
+    const configs = useConfigs();
     useEffect(()=>{
         if(musicRef.current){
 
@@ -9,7 +12,7 @@ const MusicPlayer = ({musicId}) =>{
     })
 
     return (
-        <audio src={'https://antares.ninja/music/'+musicId} controls autoPlay>
+        <audio src={configs.music+musicId} controls autoPlay>
             Error when playing
         </audio>
     )
