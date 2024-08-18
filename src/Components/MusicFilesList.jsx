@@ -14,6 +14,7 @@ const MusicFilesList = () =>{
     const screenSize = useScreenSize();
     const configs = useConfigs();
 
+
       function playMusic(e, musicId){
         e.preventDefault();
         setMusicId(musicId);
@@ -21,7 +22,7 @@ const MusicFilesList = () =>{
 
       const getFiles = async() => {
         let response = await axios.get(
-          configs.musicFiles);
+            configs.musicFiles);
             setFiles(response.data)    
       }
 
