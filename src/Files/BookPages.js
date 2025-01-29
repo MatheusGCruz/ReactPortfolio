@@ -1,21 +1,28 @@
+import React, {useContext} from 'react'
+
+
 import UseScreenSize from './../Functions/ScreenSize';
 import draculaText from './Dracula';
 import { bookSelect } from './../Functions/BookSelect.js'
+import { BookContext }  from './../Context/BookContext.js'
 
 
-export function returnPages(newBook){
+
+export function ReturnPages(newBook){
 
     const bookPages = bookSelect();   
+    const BookValue = useContext(BookContext);
+
 
     let returnList = [];
     let book = newBook;
     let bookText = "";
-    switch(book){
+    switch(BookValue){
         case "Dracula":
             bookText = draculaText;
             break;
         default:
-            bookText = "Failed to load" + bookPages;
+            bookText = "Failed to load: " + BookValue;
             break;
     }
 
