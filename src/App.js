@@ -1,13 +1,17 @@
 import './App.css';
-import React, {useEffect, fetchData} from 'react'
+import React, {useEffect, fetchData, useContext} from 'react'
 
 import HTMLFlipBook  from "react-pageflip";
 import Videos from "./Pages/Videos"
 import Music from "./Pages/Music"
+import StatusPage from './Pages/StatusPage.jsx';
 import BookList from "./Components/BookList"
-import {returnPages} from './Files/BookPages';
+import {ReturnPages} from './Files/BookPages';
 import useScreenSize from './Functions/ScreenSize';
 import { bookSelect } from './Functions/BookSelect.js'
+import MessageProvider from './Pages/TestPage.jsx'
+import { BookContext } from './Context/BookContext';
+
 
 export const UserContext = React.createContext(null);
 
@@ -16,12 +20,17 @@ function App() {
   const widthValue = 1000;
   const heightValue = 800;
 
-  const bookPages = returnPages("Dracula");
+  const bookPages = ReturnPages("Dracula");
   const screenSize = useScreenSize();
+
+  const book = useContext(BookContext);
 
   let pageIndex = 0;
 
 
+  useEffect(()=> {
+    console.log('effect on message tirggered');
+  }, []);
 
 
   return (
@@ -38,17 +47,7 @@ function App() {
         </div> 
         <div className="leftPage"> <Music /></div>
 	      <div className="rightPage"><Videos /></div>
-	      <div className="leftPage">  
-          <h1>Var Values</h1>
-          <div> widthValue = {widthValue}          </div>
-          <div> heightValue = {heightValue}          </div>
-          <div> screenSize.width = {screenSize.width}          </div>
-          <div> screenSize.height = {screenSize.height}          </div>
-          <div>screenSize.font = {screenSize.font}</div>
-          <div>screenSize.verticalPadding = {screenSize.verticalPadding}</div>
-          <div>screenSize.horizontalPadding = {screenSize.horizontalPadding}</div>
-          <div>screenSize.charDensity = {screenSize.charDensity}</div>
-        </div>
+	      <div className="leftPage">          <BookContext.Provider value={"Dracula"}><StatusPage/></BookContext.Provider></div>
 
 	      <div className="rightPage"></div>
         <div className="leftPage"> <BookList /></div>
