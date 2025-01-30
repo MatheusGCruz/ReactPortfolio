@@ -22,7 +22,7 @@ export function ReturnPages(newBook){
             bookText = draculaText;
             break;
         default:
-            bookText = "Failed to load: " + BookValue;
+            bookText = draculaText; //"Failed to load: " + BookValue;
             break;
     }
 

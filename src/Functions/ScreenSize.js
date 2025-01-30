@@ -6,7 +6,7 @@ const useScreenSize = () => {
     height: .95*window.innerHeight,
     font: .02*window.innerHeight,
     verticalPadding: .02*window.innerHeight,
-    horizontalPadding: window.innerWidth>window.innerHeight?.05*window.innerHeight:.02*window.innerHeight,
+    horizontalPadding: window.innerWidth>window.innerHeight?.07*window.innerHeight:.03*window.innerHeight,
     charDensity:window.innerWidth>window.innerHeight?0.5*window.innerWidth:2.5*window.innerWidth
   });
 
